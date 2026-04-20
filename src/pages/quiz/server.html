@@ -1,0 +1,105 @@
+<!-- 서버구축및운영실습 퀴즈 -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>학습</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../style/style.css" />
+    <link rel="stylesheet" href="../../style/banner.css" />
+    <link rel="stylesheet" href="../../style/card.css" />
+    <link rel="stylesheet" href="../../style/question.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="../../index.html" class="logo">
+          <span
+            style="
+              background: linear-gradient(135deg, #614e9c, #7476d4);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            "
+            >🛡️ </span
+          >김정현진과 유청림성준
+        </a>
+        <ul class="nav-links">
+          <li><a href="../learn.html">학습</a></li>
+          <li><a href="./quizzes.html">퀴즈</a></li>
+        </ul>
+      </div>
+      <div class="header-right">
+        <a href="../team.html" class="team-link">팀 소개</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="banner" id="main-banner">
+        <div class="banner-text" id="main-banner-text">
+          <h1>서버구축 및 운영실습</h1>
+          <h3>강의에 대한 설명</h3>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <span>출제 범위</span>
+      </div>
+
+      <section class="content-area">
+        <!-- 1번 문제 -->
+        <div class="question-grid" id="1st">
+          <h3>
+            리눅스 시스템의 구조 중 하드웨어를 제어하고 운영체제의 핵심 역할을
+            수행하는 것은 무엇입니까?
+          </h3>
+          <form action="">
+            <!-- 1번 보기 -->
+            <div class="option">
+              <input
+                type="radio"
+                id="shell"
+                name="linux_struct"
+                value="shell"
+              />
+              <label for="shell">쉘(Shell)</label>
+            </div>
+            <!-- 2번 보기 -->
+            <div class="option">
+              <input
+                type="radio"
+                id="kernel"
+                name="linux_struct"
+                value="kernel"
+              />
+              <label for="kernel">커널(Kernel)</label>
+            </div>
+            <!-- 3번 보기 -->
+            <div class="option">
+              <input
+                type="radio"
+                id="library"
+                name="linux_struct"
+                value="library"
+              />
+              <label for="library">라이브러리(Library)</label>
+            </div>
+            <!-- 4번 보기 -->
+            <div class="option">
+              <input type="radio" id="app" name="linux_struct" value="app" />
+              <label for="app">응용 프로그램(Application)</label>
+            </div>
+          </form>
+        </div>
+        <button>제출</button>
+      </section>
+    </div>
+
+    <footer>© 김정현진과 유청림성준. All rights reserved.</footer>
+  </body>
+</html>

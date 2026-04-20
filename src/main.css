@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  background: white;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #0b0f1a;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.main {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.hero {
+  margin: 40px auto;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #614e9c, #7476d4);
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #ddd;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  color: #0b0b0f;
+  cursor: pointer;
+}
+
+.section {
+  margin-top: 60px;
+}
+
+.container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #5756bb, #a18ddd);
+}
+
+footer {
+  margin-top: 80px;
+  padding: 40px;
+  text-align: center;
+  color: #888;
+}
