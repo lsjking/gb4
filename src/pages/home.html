@@ -12,34 +12,7 @@
     <link rel="stylesheet" href="../style/home.css" />
   </head>
 
-  <body>
-    <!-- ===== HEADER (style.css 기준) ===== -->
-    <header>
-      <div class="header-left">
-        <a href="../index.html" class="logo">
-          <span
-            style="
-              background: linear-gradient(135deg, #614e9c, #7476d4);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-            "
-            >🛡️</span
-          >
-          김정현진과 유청림성준
-        </a>
-
-        <ul class="nav-links">
-          <li><a href="./home.html">홈</a></li>
-          <li><a href="./learn.html">학습</a></li>
-          <li><a href="./quiz/quizzes.html">퀴즈</a></li>
-        </ul>
-      </div>
-
-      <div class="header-right">
-        <a href="./team.html" class="team-link">팀 소개</a>
-      </div>
-    </header>
-
+  <body class="no-anim">
     <!-- ================================================= -->
     <!-- ✅ HUD 전용 컨테이너 (핵심 추가 부분) ✅ -->
     <!-- ================================================= -->
@@ -63,7 +36,7 @@
 
       <!-- ===== ABSOUL + ORBIT ===== -->
       <div class="orbit-wrapper">
-        <input type="checkbox" id="menu-toggle" />
+        <input type="checkbox" id="menu-toggle" checked />
 
         <!-- CORE -->
         <label for="menu-toggle" class="menu-btn">
@@ -120,5 +93,8 @@
       </div>
     </div>
     <!-- ===== HUD ROOT END ===== -->
+    <footer style="color: #ababab">
+      © 김정현진과 유청림성준. All rights reserved.
+    </footer>
   </body>
 </html>

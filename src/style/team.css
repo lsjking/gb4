@@ -78,6 +78,15 @@
     transform 0.35s ease,
     box-shadow 0.35s ease;
 }
+.profile-inner a {
+  word-break: break-word;
+  color: #444;
+  text-decoration: none;
+}
+
+.profile-inner a:hover {
+  text-decoration: underline;
+}
 
 /* ✅ hover 확대 */
 .profile:hover .profile-inner {
@@ -91,7 +100,6 @@
   border-radius: 50%;
 }
 
-/* ✅ info hover */
 .info {
   margin-top: 14px;
   font-size: 13px;

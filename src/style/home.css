@@ -4,7 +4,7 @@
 .hud-root {
   position: relative;
   width: 100%;
-  height: calc(100vh - 70px); /* header 높이 제외 */
+  height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -18,16 +18,17 @@ input[type='radio'] {
 }
 
 :root {
-  --core-color: #2563eb;
-  --glow-color: rgba(37, 99, 235, 0.6);
+  --core-color: #7476d4; /* 브랜드 메인 */
+  --glow-color: rgba(116, 118, 212, 0.6);
+
   --ring-speed: 6s;
   --core-scale: 1;
   --core-opacity: 1;
   --bg-tint: none;
   --orbit-radius: 245px;
 
-  --ball-hover-bg: #e0e7ff;
-  --ball-hover-glow: rgba(37, 99, 235, 0.35);
+  --ball-hover-bg: rgba(116, 118, 212, 0.15);
+  --ball-hover-glow: rgba(116, 118, 212, 0.45);
 }
 #mode-standby:checked ~ .orbit-wrapper {
   --ball-hover-bg: #e0e7ff;
@@ -71,16 +72,18 @@ input[type='radio'] {
 ===================== */
 .hud-status {
   position: absolute;
-  bottom: 40px; /* ✅ 화면 아래에서 거리 */
-  left: 50%;
-  transform: translateX(-50%);
+
+  top: 16px; /* ✅ 위에서 */
+  left: 16px; /* ✅ 왼쪽에서 */
+
+  transform: none; /* ✅ 가운데 정렬 해제 */
 
   font-family: 'Courier New', monospace;
   font-size: 11px;
   letter-spacing: 0.14em;
   opacity: 0.65;
   line-height: 1.6;
-  text-align: center;
+  text-align: left;
 }
 
 .hud-status label {
@@ -113,7 +116,7 @@ input[type='radio'] {
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: radial-gradient(circle, #7dd3fc, var(--core-color));
+  background: radial-gradient(circle, #7476d4, #614e9c);
   color: white;
   font-weight: bold;
 
@@ -337,72 +340,75 @@ input[type='radio'] {
   }
 }
 /* =====================
-   AI TEXT (FINAL – HOVER ONLY)
+   AI TEXT
 ===================== */
 .ai-text {
   position: absolute;
-  top: calc(50% + 80px);
+  top: calc(50% + 100px);
   left: 50%;
   transform: translateX(-50%);
+
   width: 320px;
-  height: 1.4em;
-  text-align: center;
-  overflow: hidden;
-  font-size: 12px;
+  height: 3em; /* 🔥 충분히 크게 */
+  overflow: hidden; /* 🔥 잘림 방지 */
+
+  display: flex; /* 🔥 중앙 정렬 핵심 */
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
   font-family: 'Courier New', monospace;
   letter-spacing: 0.04em;
   color: rgba(37, 99, 235, 0.85);
-  opacity: 1;
-  text-shadow: none;
-  pointer-events: none;
-  z-index: 5;
 }
 
+/* span도 동일 정렬 */
 .ai-text span {
-  position: absolute; /* ✅ */
+  position: absolute;
   inset: 0;
-
-  display: none;
-  text-align: center;
+  opacity: 0;
+  display: flex; /* 🔥 추가 */
+  align-items: center;
+  justify-content: center;
 }
-
-/* ===== 기본 상태 문구 ===== */
 #mode-standby:checked ~ .orbit-wrapper .ai-text .standby {
-  display: inline;
+  opacity: 1;
+  color: #6366f1; /* 보라톤 */
 }
+
 #mode-analysis:checked ~ .orbit-wrapper .ai-text .analysis {
-  display: inline;
+  opacity: 1;
+  color: #06b6d4;
 }
+
 #mode-sleep:checked ~ .orbit-wrapper .ai-text .sleep {
-  display: inline;
-  opacity: 0.4;
+  opacity: 1;
+  color: #9ca3af;
 }
+
 #mode-alert:checked ~ .orbit-wrapper .ai-text .alert {
-  display: inline;
+  opacity: 1;
   color: #ef4444;
-  text-shadow: 0 0 8px rgba(239, 68, 68, 0.9);
 }
-
-/* =====================
-   AI SPEAKING – BALL HOVER ONLY
-===================== */
-
 .orbit-wrapper:has(.ball:hover) .ai-text span {
-  display: none !important;
+  opacity: 0 !important;
 }
 
 .orbit-wrapper:has(.ball:hover) .ai-text::after {
   content: attr(data-label) ' command detected.';
+
   position: absolute;
-  inset: 0;
-  text-align: center;
+  inset: 0; /* 🔥 이게 핵심 */
 
-  color: rgb(10, 176, 231); /* ✅ 완전 불투명 */
-  text-shadow: none;
-  opacity: 1;
+  display: flex; /* 🔥 중앙 정렬 */
+  align-items: center;
+  justify-content: center;
 
-  -webkit-font-smoothing: antialiased;
-  font-smooth: always;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+
+  color: rgb(0, 213, 131);
 }
 
 /* =====================
@@ -417,21 +423,24 @@ input[type='radio'] {
 @keyframes core-pulse-standby {
   0% {
     transform: translate(-50%, -50%) scale(1);
+
     box-shadow:
-      0 0 24px rgba(37, 99, 235, 0.45),
-      0 0 48px rgba(37, 99, 235, 0.25);
+      0 0 24px rgba(116, 118, 212, 0.45),
+      0 0 48px rgba(116, 118, 212, 0.25);
   }
   50% {
     transform: translate(-50%, -50%) scale(1.06);
+
     box-shadow:
-      0 0 40px rgba(37, 99, 235, 0.8),
-      0 0 90px rgba(37, 99, 235, 0.5);
+      0 0 40px rgba(116, 118, 212, 0.75),
+      0 0 90px rgba(116, 118, 212, 0.45);
   }
   100% {
     transform: translate(-50%, -50%) scale(1);
+
     box-shadow:
-      0 0 24px rgba(37, 99, 235, 0.45),
-      0 0 48px rgba(37, 99, 235, 0.25);
+      0 0 24px rgba(116, 118, 212, 0.45),
+      0 0 48px rgba(116, 118, 212, 0.25);
   }
 }
 
