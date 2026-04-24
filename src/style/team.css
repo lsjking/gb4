@@ -39,7 +39,7 @@
 /* 카드 배치 */
 .profile {
   position: absolute;
-  width: 260px;
+  width: 280px;
   top: 50%;
   left: 50%;
   transition: opacity 0.3s ease;
